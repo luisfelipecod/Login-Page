@@ -1,0 +1,329 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --text-base: #afb6c2;
+    --text-title: #d4ccb6;
+    --background: #191816;
+    --form-background: #24221f;
+    --primary-color: #ffc632;
+}
+
+a{
+    text-decoration: none;
+}
+
+html {
+    /* 1rem = 10px */
+    font-size: 62.5%;
+}
+
+body{
+    background: var(--background);
+    color: var(--text-base);
+    font-family: 'Poppins',san-serif;/*confirmar ainda*/
+}
+
+main{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+main header{
+    display: none;
+}
+
+body > div{
+    width: 0;
+    height: 0;
+}
+
+body > div img{
+    display: none;
+}
+
+main form{
+    margin-inline: auto;
+    padding-inline: 2rem;
+
+    display:flex;
+    flex-direction: column;
+
+    max-width: 51.2rem;
+
+    background: var(--background);
+}
+
+main form header{
+    margin: 0;
+    margin-top: 4rem;
+    width:33.5rem;
+    display: block;
+}
+
+main form header #titleFormContainer{
+    display: flex;
+    margin-top: 3rem;
+    gap: 1rem;
+}
+
+main form header #titleFormContainer h1{
+    font-size: 2.4rem;
+    line-height: 3.6rem;
+    font-weight: 600;
+    color: var(--text-title);
+}
+
+main form header h3{
+    margin-top: 0.5rem;
+    font-family: Roboto;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    color: var(--text-base);
+}
+
+main form .containerInput{
+    display: flex;
+    flex-direction: column;
+    width: 33.5rem;
+    gap: 2rem;
+    margin-top: 2.7rem;
+}
+
+main form .containerInput .contentInput .field{
+    position: relative;
+}
+
+main form .containerInput .contentInput .field:focus-within{
+    border:1px solid var(--primary-color);
+}
+
+main form .containerInput .contentInput .field:focus-within > svg path{
+    stroke: var(--primary-color);
+}
+
+main form .containerInput .field #eye{
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    cursor: pointer;
+}
+
+main form .containerInput .field #eye:hover path{
+    stroke:var(--primary-color);
+}
+
+main form .containerInput .contentInput label{
+    display: block;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    color: var(--text-base);
+}
+
+main form .containerInput .field{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    padding: 1.2rem;
+    border:1px solid #868686;
+    border-radius: 0.4rem;
+}
+
+main form .containerInput .field input{
+    margin-left: 0.5rem;
+    background: var(--background);
+    flex:1;
+
+    font-size: 1.4rem;
+    line-height:1.641rem;
+    color: var(--text-base);
+    border: none;
+    outline:none;
+}
+
+main form #additionalOptions{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 33.5rem;
+}
+
+main form #additionalOptions div{
+    display:flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+
+    font-size: 1.6rem;
+    font-family:'Roboto';
+    font-weight: 400;
+}
+
+/*Custom checkbox*/
+main form #additionalOptions div input{
+    width: 2rem;
+    height: 2rem;
+    z-index: 1;
+    opacity: 0;
+}
+
+main form #additionalOptions div span{
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    border-radius: .4rem;
+    z-index: 0;
+    background-color: var(--primary-color);
+}
+
+main form #additionalOptions div span svg{
+    visibility: hidden;
+}
+
+main form #additionalOptions div input:checked + span svg{
+    visibility: visible;
+}
+
+main form #additionalOptions div a{
+
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    font-family:'Roboto';
+    font-weight: 400;
+    text-decoration: none;
+}
+
+main form button{
+    margin-top: 2rem;
+    margin-bottom: 1.4rem;
+    height: 5.1rem;
+    width:33.4rem;
+
+    background:var(--primary-color);
+    border: transparent;
+    border-radius: 0.4rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 2.7rem;
+    color: #473404;
+    cursor: pointer;
+}
+
+main form a{
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 2.1rem
+}
+
+
+
+@media(min-width:700px){
+    main{
+        align-items: center;
+    }
+
+    main form{
+        justify-content: center;
+        align-items: center;
+
+        width: 42.2rem;
+        height: 51.2rem;
+
+        border-radius: 0.4rem;
+        background: var(--form-background);
+    }
+    
+    main form .containerInput .field input{
+        background: var(--form-background);
+    }
+}
+
+@media (min-width:1000px){
+    body{
+        display: flex;
+    }
+    main{
+        width: 50%;
+        flex-direction: column;
+        justify-content: center;
+        background: var(--background);
+        position: relative;
+    }
+
+    main > header{
+        display: block;
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+    }
+
+    main form{
+        padding-bottom: 0;
+    }
+    
+    main form header > svg{
+        display: none;
+    }
+
+    main form header{
+        width: 33.4rem;
+        height: 6.4rem;
+    }
+
+    main form header{
+        margin-top: 0;
+    }
+
+    main form header #titleFormContainer{
+        margin-top: 0;
+    }
+
+    /* Image Background - other half page */
+    body > div {
+        width: 50%;
+        min-height: 100vh;
+    }
+
+    body div img{
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+
+}
+
+@media(min-width:1000px) and (max-height:700px){
+    main > header{
+        display: block;
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+    }
+}
+
+@media (min-width:1440px){
+    main form{
+        width: 57.2rem;
+        height: 51.2rem;
+    }
+}
+
+@media (min-width:2000px){
+    html{
+        font-size: 87.5%;
+    }
+
+    body div img{
+        display: block;
+        width: 100%;
+        height: 100%;
+        src:url(./images/side-image-2x.jpg);
+    }
+}
