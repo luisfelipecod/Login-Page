@@ -1,6 +1,6 @@
 # Login-Page
 <h3 align = "center">
-<img src="https://user-images.githubusercontent.com/102755532/181370957-19af8b32-4ec7-44d0-a714-fe8b74cd05f1.png" width ="600px">
+<img src="./readmeImages/coverImage.png">
 </h3>
 
 ## Proposta do Desafio
